@@ -1,18 +1,10 @@
-import { NextConfig } from 'next';
+// next.config.mjs – minimal Next.js config (plain JavaScript)
 
-/**
- * next.config.mjs – minimal config for the 3D portfolio.
- * Enables MDX, React Strict Mode, and allows images from any domain (for GLTF textures).
- */
-const nextConfig = {
+export default {
   reactStrictMode: true,
-  /** Enable the experimental app directory (already default in Next 14) */
-  experimental: { appDir: true },
+  experimental: { appDir: true }, // app router (default in Next 14)
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
-  // Optional: future Webpack 5 features
   future: { webpack5: true },
-} satisfies NextConfig;
-
-export default nextConfig;
+};

@@ -1,4 +1,32 @@
-/* globals.css – design system for Sophim 3D portfolio */
+/* globals.css – Tailwind base and custom utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply m-0 p-0 font-sans bg-bg text-text overflow-x-hidden;
+  }
+}
+
+/* Custom glass‑morphism helper */
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-[12px] bg-bg-glass border border-white/12 rounded-lg shadow-glass;
+    border-radius: var(--radius);
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .mx-auto { @apply mx-auto; }
+  .text-center { @apply text-center; }
+  .p-4 { @apply p-4; }
+  .mt-8 { @apply mt-8; }
+  .hover\:scale:hover { @apply scale-102; }
+  .hover\:up:hover { @apply -translate-y-1; }
+}
+
 
 :root {
   /* Colour palette – harmonious dark theme */

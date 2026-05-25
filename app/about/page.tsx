@@ -1,39 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from '../../firebase/firebaseConfig';
+// app/about/page.tsx
+"use client";
+import NavBar from '@/components/NavBar';
 
-const About = () => {
-  const [bio, setBio] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchBio = async () => {
-      try {
-        const bioRef = doc(db, 'bio', 'sophim');
-        const snap = await getDoc(bioRef);
-        if (snap.exists()) {
-          setBio(snap.data());
-        }
-      } catch (e) {
-        console.error('Error loading bio', e);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchBio();
-  }, []);
-
-  if (loading) return <div className="glass p-8">Loading…</div>;
-  if (!bio) return <div className="glass p-8">No bio data found.</div>;
-
+export default function AboutPage() {
   return (
-    <section className="glass p-8 max-w-3xl mx-auto mt-12">
-      <h1 className="text-3xl font-bold mb-4">{bio.name}</h1>
-      <p className="mb-2"><strong>Born:</strong> {bio.birthDate}</p>
-      <p className="mb-2"><strong>Education:</strong> {bio.education}</p>
-      <p className="mb-2"><strong>Experience:</strong> {bio.experience}</p>
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0d0f2a] to-[#1a1c3a] text-primary p-8">
+      <div className="glass p-8 max-w-2xl">
+        <h1 className="text-4xl font-bold mb-4">About Me</h1>
+        <p className="text-base leading-relaxed">
+          Hi! I’m Sophim, a full‑stack software developer passionate about building immersive web experiences. I love blending 3‑D graphics, modern UI design, and robust back‑ends to create memorable portfolios.
+        </p>
+      </div>
     </section>
   );
-};
-
-export default About;
+}
