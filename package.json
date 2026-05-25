@@ -1,0 +1,28 @@
+{
+  "name": "my-3d-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "firebase": "^12.13.0",
+    "gsap": "^3.15.0",
+    "next": "14.2.5",
+    "react": "18.3.0",
+    "react-dom": "18.3.0",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.2",
+    "@types/react": "18.3.2",
+    "eslint": "9.10.0",
+    "eslint-config-next": "14.2.5",
+    "typescript": "5.5.2"
+  }
+}

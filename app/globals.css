@@ -1,0 +1,50 @@
+/* globals.css – design system for Sophim 3D portfolio */
+
+:root {
+  /* Colour palette – harmonious dark theme */
+  --color-bg: hsl(230, 12%, 8%);
+  --color-bg-glass: rgba(255, 255, 255, 0.07);
+  --color-primary: hsl(200, 80%, 55%);
+  --color-primary-light: hsl(200, 80%, 65%);
+  --color-text: #f0f0f0;
+  --color-subtext: #c0c0c0;
+  --radius: 12px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.6);
+  --transition: 0.3s ease;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: hsl(230, 12%, 6%);
+  }
+}
+
+html, body {
+  margin:0; padding:0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Glass‑morphism helper */
+.glass {
+  backdrop-filter: blur(12px);
+  background: var(--color-bg-glass);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: var(--transition);
+}
+
+/* Utility classes */
+.mx-auto {margin-left:auto;margin-right:auto;}
+.text-center {text-align:center;}
+.p-4 {padding:1rem;}
+.mt-8 {margin-top:2rem;}
+
+/* Hover effects */
+.hover-scale:hover {transform:scale(1.02);}
+.hover-up:hover {transform:translateY(-4px);}
